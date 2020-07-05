@@ -25,7 +25,8 @@ header{
     @include block-size;
     @include properties-background;
     background-image: url(../img/back-header.png);
-    min-height: 820px;
+    max-height: 1000px;
+    height: 100vh;
     .header-content{
         @include flex-center;
         flex-direction: column;
@@ -131,7 +132,6 @@ header{
 }
 
 .menu{
-    // display: none;
     position: sticky;
     top: 0;
     z-index: 52;
@@ -239,7 +239,7 @@ header{
                 height: 120px;
                 &__text{
                     @include aleoregular;
-                    font-size: 36px;
+                    font-size: 31px;
                     &:hover{
                         color: rgb(168, 158, 17);
                     }
@@ -295,7 +295,7 @@ header{
     }
 
     .reviews{
-        padding: 0px calc(50vw - 310px);
+        padding: 0px calc(50vw - 510px);
         @include properties-background;
         background-image: url(../img/back-review.png);
         max-height: 755px;
@@ -315,7 +315,7 @@ header{
                 display: flex !important;
                 max-height: 285px ;
                 background-color: #333333 ;
-                width: 90% !important;
+                // width: 90% !important;
                 margin-right: 0;
                 &__picture{
                     width: 445px;
@@ -394,8 +394,7 @@ footer{
             font-size: 24px;
             text-transform: uppercase;
             margin: 120px 0 0 0;
-            // align-self: center;
-            // почему не ровняет?
+
         }
         &__discription{
             @include JosefinSans;
@@ -465,7 +464,7 @@ footer{
         &-content{
             flex-direction: column;
             height: 100%;
-            
+
     &-text{
         display: flex;
         flex-direction: column;
@@ -499,7 +498,7 @@ footer{
     .icon-content-block{
         // height: 100px;
         &__text{
-            // font-size: 20px;
+            font-size: 20px;
         }
     }
 }
@@ -551,6 +550,9 @@ footer{
     margin: 0;
 }
 
+}
+.reviews-content-block{
+    padding: 0;
 }
 .menu-block{
     justify-content: space-around;
@@ -640,12 +642,15 @@ opacity: 0;
         padding: 10px calc(50vw - 510px);
     }
 }
-@media screen and (min-width: 340px){
+@media screen and (min-width: 340px) and (max-width: 350px){
     .choose{
         padding: 10px calc(50vw - 165px);
     }
     .icon{
         padding: 0px calc(50vw - 165px);
+        &-content-block__text{
+            font-size: 14px;
+        }
     }
     .icon-content-block{
         &__text{
@@ -653,9 +658,9 @@ opacity: 0;
         }
     }
 }
-@media screen and (min-width: 318px){
+@media screen and (max-width: 318px) {
     .choose{
-        padding: 0px calc(50vw - 150px);
+        padding: 0px calc(50vw - 150pgix);
         height: 100%;
         &-content{
             flex-direction: column;

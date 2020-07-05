@@ -381,7 +381,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(../img/back-header.png);
-  min-height: 820px;
+  max-height: 1000px;
+  height: 100vh;
 }
 header .header-content {
   display: flex;
@@ -635,7 +636,7 @@ header .header-content-scroll .scroll {
 .icon-content-block__text {
   font-family: "aleo-regular";
   color: white;
-  font-size: 36px;
+  font-size: 31px;
 }
 .icon-content-block__text:hover {
   color: #a89e11;
@@ -714,7 +715,7 @@ header .header-content-scroll .scroll {
 }
 
 .reviews {
-  padding: 0px calc(50vw - 310px);
+  padding: 0px calc(50vw - 510px);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -740,7 +741,6 @@ header .header-content-scroll .scroll {
   display: flex !important;
   max-height: 285px;
   background-color: #333333;
-  width: 90% !important;
   margin-right: 0;
 }
 .reviews-content-block__picture {
@@ -922,6 +922,10 @@ footer .footer-content__icon:hover {
     padding: 10px calc(50vw - 275px);
     height: 200px;
   }
+  .icon .icon-content-block__text {
+    font-size: 20px;
+  }
+
   .spain-house,
 .spain-mountain {
     padding: 10px 50px;
@@ -968,6 +972,10 @@ footer .footer-content__icon:hover {
   }
   .reviews-content-slick {
     margin: 0;
+  }
+
+  .reviews-content-block {
+    padding: 0;
   }
 
   .menu-block {
@@ -1061,7 +1069,7 @@ footer .footer-content__icon:hover {
     padding: 10px calc(50vw - 510px);
   }
 }
-@media screen and (min-width: 340px) {
+@media screen and (min-width: 340px) and (max-width: 350px) {
   .choose {
     padding: 10px calc(50vw - 165px);
   }
@@ -1069,14 +1077,17 @@ footer .footer-content__icon:hover {
   .icon {
     padding: 0px calc(50vw - 165px);
   }
+  .icon-content-block__text {
+    font-size: 14px;
+  }
 
   .icon-content-block__text {
     font-size: 15px;
   }
 }
-@media screen and (min-width: 318px) {
+@media screen and (max-width: 318px) {
   .choose {
-    padding: 0px calc(50vw - 150px);
+    padding: 0px calc(50vw - 150pgix);
     height: 100%;
   }
   .choose-content {
