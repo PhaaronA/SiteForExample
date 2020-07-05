@@ -2,8 +2,8 @@
 $(function () {
     $(".reviews-content-slick").slick({
         dots: true,
-        // autoplay: true,
-        // autospeed: 2000,
+        autoplay: true,
+        autospeed: 2000,
         slidesToShow: 1,
         responsive: [
             {
