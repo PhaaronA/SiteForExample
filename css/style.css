@@ -350,6 +350,10 @@ template {
   font-family: "aleoregular";
   src: url(/font/aleo/aleo-regular-webfont.ttf);
 }
+@font-face {
+  font-family: "Got";
+  src: url(/font/GothamBook/GothamBook.ttf);
+}
 body {
   color: white;
 }
@@ -515,13 +519,16 @@ header .header-content-scroll .scroll {
   padding: 0;
 }
 .menu-block-item__link {
-  font-family: "aleo-regular";
+  font-family: "Got";
   color: white;
   text-decoration: none;
   font-size: 14px;
 }
 .menu-block-item__link:hover {
   color: brown;
+}
+.menu__burger {
+  display: none;
 }
 
 .choose {
@@ -733,6 +740,8 @@ header .header-content-scroll .scroll {
   display: flex !important;
   max-height: 285px;
   background-color: #333333;
+  width: 90% !important;
+  margin-right: 0;
 }
 .reviews-content-block__picture {
   width: 445px;
@@ -787,15 +796,14 @@ header .header-content-scroll .scroll {
   border-radius: 50%;
   width: 10px;
   height: 10px;
-  background: #ffffff;
+  border: #ffffff solid 1px;
   cursor: pointer;
 }
 .reviews-content-slick .slick-dots button {
   display: none;
 }
 .reviews-content-slick .slick-dots .slick-active {
-  border: #ffffff solid 1px;
-  background-color: transparent;
+  background: #ffffff;
 }
 
 footer {
@@ -841,6 +849,7 @@ footer .footer-content__icon:hover {
   header {
     padding: 0 20px 0 20px;
     height: 100vh;
+    min-height: 100px;
   }
   header .header-content-headline {
     margin-top: 37%;
@@ -892,6 +901,7 @@ footer .footer-content__icon:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 40px;
   }
   .choose-content-text__title {
     margin-bottom: 20px;
@@ -909,16 +919,9 @@ footer .footer-content__icon:hover {
   }
 
   .icon {
-    padding: 10px calc(50vw - 180px);
+    padding: 10px calc(50vw - 275px);
     height: 200px;
   }
-  .icon .icon-content-block {
-    height: 100px;
-  }
-  .icon .icon-content-block__text {
-    font-size: 20px;
-  }
-
   .spain-house,
 .spain-mountain {
     padding: 10px 50px;
@@ -971,18 +974,78 @@ footer .footer-content__icon:hover {
     justify-content: space-around;
   }
   .menu-block-item {
-    width: 92%;
+    width: 90%;
   }
-  .menu-block__logo {
-    display: none;
+
+  .menu-block-item__link {
+    display: block;
+    text-align: center;
+  }
+
+  .menu__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    transition: 0.3s;
+  }
+  .menu__burger__sp {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+
+  .menu__burger::before,
+.menu__burger::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transition: 0.3s;
+  }
+
+  .menu__burger::before {
+    top: 0;
+  }
+
+  .menu__burger::after {
+    bottom: 0;
+  }
+
+  .menu__burger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  .menu__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  .menu__burger__sp.active {
+    transform: scale(0);
+  }
+
+  .menu-block-item {
+    opacity: 0;
+  }
+
+  .menu-block-item.active {
+    transition: 0.5s;
+    display: block;
+    opacity: 1;
+    display: flex;
   }
 
   .menu-block__logo {
-    display: none;
+    position: absolute;
   }
 
-  .slick-next.slick-arrow {
-    display: none !important;
+  .menu-block__logo.active {
+    display: none;
   }
 }
 @media screen and (min-width: 1025px) and (max-width: 1770px) {
@@ -996,5 +1059,39 @@ footer .footer-content__icon:hover {
 
   .reviews {
     padding: 10px calc(50vw - 510px);
+  }
+}
+@media screen and (min-width: 340px) {
+  .choose {
+    padding: 10px calc(50vw - 165px);
+  }
+
+  .icon {
+    padding: 0px calc(50vw - 165px);
+  }
+
+  .icon-content-block__text {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 318px) {
+  .choose {
+    padding: 0px calc(50vw - 150px);
+    height: 100%;
+  }
+  .choose-content {
+    flex-direction: column;
+  }
+  .choose-content-text__title {
+    margin: 0;
+  }
+  .choose-content-picture {
+    justify-content: center;
+  }
+  .choose-content-picture__top {
+    width: 300px;
+  }
+  .choose-content-picture__bottom {
+    width: 300px;
   }
 }

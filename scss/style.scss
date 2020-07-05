@@ -153,7 +153,8 @@ header{
         list-style-type: none;
         padding: 0;
         &__link{
-            @include aleoregular;
+            font-family: "Got";
+            color: white;
             text-decoration: none;
             font-size: 14px;
             &:hover{
@@ -162,7 +163,12 @@ header{
             }
         }
     } 
+    &__burger{
+        display: none;
+    }
 }
+
+
 
 .choose{
         @include block-size;
@@ -309,6 +315,8 @@ header{
                 display: flex !important;
                 max-height: 285px ;
                 background-color: #333333 ;
+                width: 90% !important;
+                margin-right: 0;
                 &__picture{
                     width: 445px;
                     height: 284px;
@@ -362,15 +370,14 @@ header{
             border-radius: 50%;
             width: 10px;
             height: 10px;
-            background: #ffffff;
+            border: #ffffff solid 1px;
             cursor: pointer;
     }
     & .slick-dots button {
         display: none;
       }
       & .slick-dots .slick-active {
-        border: #ffffff solid 1px;
-        background-color: transparent;
+        background: #ffffff;
       }
 }
 
@@ -415,6 +422,7 @@ footer{
     header{
         padding: 0 20px 0 20px;
         height: 100vh;
+        min-height: 100px;
         .header-content-headline{
             margin-top: 37%;
         }
@@ -462,6 +470,7 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-top: 40px;
         &__title{
             margin-bottom: 20px;
         }
@@ -485,12 +494,12 @@ footer{
         }
     }
 .icon{
-    padding: 10px calc(50vw - 180px);
+    padding: 10px calc(50vw - 275px);
     height: 200px;
     .icon-content-block{
-        height: 100px;
+        // height: 100px;
         &__text{
-            font-size: 20px;
+            // font-size: 20px;
         }
     }
 }
@@ -545,20 +554,80 @@ footer{
 }
 .menu-block{
     justify-content: space-around;
-    &-item{
-        width: 92%;
-    }
-    &__logo{
-    display: none;
+&-item{
+    width: 90%;
 }
+}
+
+.menu-block-item__link{
+    display: block;
+    text-align: center;
+}
+
+
+
+.menu__burger{
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    transition: 0.3s;
+
+&__sp{
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    
+}
+}
+.menu__burger::before,
+.menu__burger::after{
+    content: '';
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    transition: 0.3s;
+}
+.menu__burger::before{
+    top: 0;
+}
+.menu__burger::after{
+    bottom: 0;
+}
+.menu__burger.active::before{
+    transform: rotate(45deg);
+    top: 9px;
+}
+.menu__burger.active::after{
+    transform: rotate(-45deg);
+    bottom: 9px;
+}
+.menu__burger__sp.active{
+    transform: scale(0);
+    
+}
+.menu-block-item{
+opacity: 0;
+}
+.menu-block-item.active{
+    transition: 0.5s;
+    display: block;
+    opacity: 1;
+    display: flex;
 }
 .menu-block__logo{
+    // display: none;
+    position: absolute;
+}
+.menu-block__logo.active{
     display: none;
 }
-.slick-next.slick-arrow{
-    display: none !important;
 }
-}
+
+
 @media screen and (min-width: 1025px) and (max-width: 1770px){
     .spain-house{
         padding: 10px calc(50vw - 510px);
@@ -571,7 +640,40 @@ footer{
         padding: 10px calc(50vw - 510px);
     }
 }
-
+@media screen and (min-width: 340px){
+    .choose{
+        padding: 10px calc(50vw - 165px);
+    }
+    .icon{
+        padding: 0px calc(50vw - 165px);
+    }
+    .icon-content-block{
+        &__text{
+            font-size: 15px;
+        }
+    }
+}
+@media screen and (min-width: 318px){
+    .choose{
+        padding: 0px calc(50vw - 150px);
+        height: 100%;
+        &-content{
+            flex-direction: column;
+            &-text__title{
+                margin: 0;
+            }
+            &-picture{
+                justify-content: center;
+                &__top{
+                    width: 300px; 
+                }
+                &__bottom{
+                    width: 300px; 
+                }
+            }
+        }
+    }
+}
 // как перебивать в меди запросах как минуниму падинги ширины джастивай контент 
 // почему не работает алайн селф
 // как прописывать пэдинги калк
